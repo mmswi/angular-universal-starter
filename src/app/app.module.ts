@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { StoreModule } from '@ngrx/store';
-import {TransferHttpCacheModule} from '@nguniversal/common';
+import { Store, StoreModule } from '@ngrx/store';
+import { TransferHttpCacheModule } from '@nguniversal/common';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {metaReducers, reducers} from './store/reducers';
+import { StateTransferFactory } from './factories/state-transfer.factory';
+import { TransferStateService } from './services/transfer-state.service';
+import { metaReducers, reducers } from './store/reducers';
 
 
 @NgModule({
@@ -21,7 +23,14 @@ import {metaReducers, reducers} from './store/reducers';
     TransferHttpCacheModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: StateTransferFactory,
+      deps: [TransferStateService, Injector, Store],
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
