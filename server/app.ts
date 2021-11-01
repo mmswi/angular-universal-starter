@@ -4,9 +4,10 @@ import { join } from 'path';
 import { existsSync } from 'fs';
 import bodyParser from 'body-parser';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { AppServerModule } from '@app/app.server.module';
-import { APP_BASE_HREF } from '@angular/common';
+import { APP_BASE_URL } from '@src/tokens';
 
 
 // The Express app is exported so that it can be used by serverless Functions.
@@ -33,7 +34,13 @@ export function app(): express.Express {
 
     // All regular routes use the Universal engine
     app.get('*', (req, res) => {
-        res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+        res.render(indexHtml, { 
+            req, 
+            providers: [
+                { provide: APP_BASE_HREF, useValue: req.baseUrl },
+                { provide: APP_BASE_URL, useValue: process.env.BASE_URL },
+            ] 
+        });
     });
 
     return app;
