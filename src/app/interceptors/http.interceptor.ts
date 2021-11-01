@@ -25,11 +25,11 @@ export class HTTPInterceptor implements HttpInterceptor {
 
     if (this.isServer) {
       baseUrl = this.injector.get(APP_BASE_URL) || '';
-      
+
       if (!this.transferStateService.has(APP_BASE_URL_KEY)) {
         this.transferStateService.set(APP_BASE_URL_KEY, baseUrl);
       }
-      
+
     } else {
       baseUrl = this.transferStateService.get(APP_BASE_URL_KEY) || '';
     }

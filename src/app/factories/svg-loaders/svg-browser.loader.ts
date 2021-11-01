@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { SvgHttpLoader, SvgLoader } from 'angular-svg-icon';
-import { Observable } from 'rxjs';
-import { TransferStateService } from '@app/services/transfer-state.service';
-import { TRANSFER_SVG_KEY } from '@app/dictionary/transfer-state.dictionary';
+import {HttpClient} from '@angular/common/http';
+import {SvgHttpLoader, SvgLoader} from 'angular-svg-icon';
+import {Observable} from 'rxjs';
+import {TransferStateService} from '@app/services/transfer-state.service';
+import {TRANSFER_SVG_KEY} from '@app/dictionary/transfer-state.dictionary';
 
 export class SvgBrowserLoader implements SvgLoader {
   constructor(private http: HttpClient, private transferStateService: TransferStateService) {

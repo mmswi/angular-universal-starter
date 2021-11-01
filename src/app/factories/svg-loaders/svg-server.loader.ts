@@ -1,10 +1,10 @@
-import { readFileSync } from 'fs';
-import { join, resolve, basename } from 'path';
-import { SvgLoader } from 'angular-svg-icon';
-import { Observable } from 'rxjs';
+import {readFileSync} from 'fs';
+import {join, resolve, basename} from 'path';
+import {SvgLoader} from 'angular-svg-icon';
+import {Observable} from 'rxjs';
 
-import { TransferStateService } from '@app/services/transfer-state.service';
-import { TRANSFER_SVG_KEY } from '@app/dictionary/transfer-state.dictionary';
+import {TransferStateService} from '@app/services/transfer-state.service';
+import {TRANSFER_SVG_KEY} from '@app/dictionary/transfer-state.dictionary';
 
 export class SvgServerLoader implements SvgLoader {
 

@@ -8,7 +8,7 @@ import {debugReducer} from './meta.reducer';
 import * as userReducer from './user.reducer';
 
 export const reducers: ActionReducerMap<State> = {
-  user  : userReducer.reducer
+  user: userReducer.reducer
 };
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [debugReducer] : [];
