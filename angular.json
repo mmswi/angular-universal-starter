@@ -35,7 +35,9 @@
             ],
             "scripts": [],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             }
           },
           "configurations": {
@@ -115,7 +117,9 @@
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": [
+                "src/styles"
+              ]
             }
           },
           "configurations": {
@@ -168,9 +172,21 @@
             }
           },
           "defaultConfiguration": "production"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "angular-universal-starter"
+  "defaultProject": "angular-universal-starter",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
