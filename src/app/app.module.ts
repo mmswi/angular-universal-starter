@@ -2,7 +2,9 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Store, StoreModule } from '@ngrx/store';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { environment } from '@src/environments/environment';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,11 @@ import { metaReducers, reducers } from './store/reducers';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     StoreModule.forRoot(reducers, {
       metaReducers
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge   : 25, // Retains last 25 states
+      logOnly  : environment.production, // Restrict extension to log-only mode
+      autoPause: true // Pauses recording actions and state changes when the extension window is not open
     }),
     TransferHttpCacheModule,
     AppRoutingModule
