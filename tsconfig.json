@@ -20,6 +20,7 @@
       "es2018",
       "dom"
     ],
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@app/*": ["src/app/*"],
       "@src/*": ["src/*"]
