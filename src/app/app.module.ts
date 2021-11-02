@@ -1,6 +1,6 @@
 import {HttpClient, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {APP_INITIALIZER, NgModule, Injector} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {BrowserModule, BrowserTransferStateModule} from '@angular/platform-browser';
 import {Store, StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {TransferHttpCacheModule} from '@nguniversal/common';
@@ -22,6 +22,7 @@ import {svgLoaderFactory} from './factories/svg-loader.factory';
   ],
   imports: [
     HttpClientModule,
+    BrowserTransferStateModule,
     BrowserModule.withServerTransition({appId: 'serverApp'}),
     StoreModule.forRoot(reducers, {
       metaReducers
