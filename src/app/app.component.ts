@@ -11,10 +11,15 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
   title = 'angular-universal-starter';
   users$: Observable<any> | undefined;
+  posts$: Observable<any> | undefined;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.users$ = this.http.get('api/users');
+  }
+
+  getPosts(): void {
+    this.posts$ = this.http.get<Observable<any>>('api/posts');
   }
 }

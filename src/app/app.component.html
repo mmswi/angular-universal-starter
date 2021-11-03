@@ -5,4 +5,12 @@
         {{user.name}}
     </div>
 </div>
+<button (click)="getPosts()">Get posts</button>
+
+<div *ngIf="posts$ | async as posts">
+    Posts: 
+    <div *ngFor="let post of posts.slice(0, 10)">
+        {{post.title}}
+    </div>
+</div>
 <router-outlet></router-outlet>
