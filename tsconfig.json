@@ -21,6 +21,7 @@
       "dom"
     ],
     "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
     "paths": {
       "@app/*": ["src/app/*"],
       "@src/*": ["src/*"]
