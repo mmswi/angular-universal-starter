@@ -24,6 +24,18 @@ export function app(): express.Express {
   app.set('view engine', 'html');
   app.set('views', distFolder);
 
+  app.get('/my-first-route', (req, res) => {
+    res.send({
+      myData: 'hello there from the server!!!'
+    })
+  });
+
+  app.get('/my-second-route', (req, res) => {
+    res.send({
+      myData: 'hello second route there from the server!!!'
+    })
+  });
+
   app.use('/api', createProxyMiddleware({
     target      : process.env.API_URL,
     changeOrigin: true,

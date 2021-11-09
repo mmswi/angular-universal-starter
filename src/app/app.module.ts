@@ -14,11 +14,15 @@ import {HTTPInterceptor} from './interceptors/http.interceptor';
 import {TransferStateService} from './services/transfer-state.service';
 import {metaReducers, reducers} from './store/reducers';
 import {svgLoaderFactory} from './factories/svg-loader.factory';
+import {FirstComponent} from './components/first/first.component';
+import {SecondComponent} from './components/second/second.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     HttpClientModule,

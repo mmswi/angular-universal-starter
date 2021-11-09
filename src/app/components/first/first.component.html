@@ -1,0 +1,18 @@
+<div>
+    <h5>We navigated on the client!!!</h5>
+    <a routerLink="/"> Go back home</a>
+
+    <div *ngIf="users$ | async as users">
+        <p *ngFor="let user of users">
+            {{user.name}}
+        </p>
+    </div>
+
+    <p>
+        <button (click)="onClick()">Hit the server</button>
+    </p>
+
+    <p *ngIf="serverData$ | async as serverData">
+        {{serverData.myData}}
+    </p>
+</div>
