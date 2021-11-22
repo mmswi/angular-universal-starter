@@ -1,16 +1,1 @@
-<svg-icon src='assets/svgs/icon.svg'></svg-icon> 
-<div class="my-color">Angular works!</div>
-<div *ngIf="users$ | async as users">
-    <div *ngFor="let user of users">
-        {{user.name}}
-    </div>
-</div>
-<button (click)="getPosts()">Get posts</button>
-
-<div *ngIf="posts$ | async as posts">
-    Posts: 
-    <div *ngFor="let post of posts.slice(0, 10)">
-        {{post.title}}
-    </div>
-</div>
-<router-outlet></router-outlet>
+<app-parent></app-parent>

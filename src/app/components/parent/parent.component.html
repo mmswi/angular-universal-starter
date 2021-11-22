@@ -1,0 +1,8 @@
+<p>parent works!</p>
+<p>{{text}}</p>
+<button (click)="toggleChild()">Toggle Child</button>
+
+<app-child *ngIf="showChild" (changeParent)="changeProps($event)"></app-child>
+
+<app-other-child [isLoading]="isLoading$ | async"></app-other-child>
+<!-- <app-other-child [isLoading]="true"></app-other-child> -->

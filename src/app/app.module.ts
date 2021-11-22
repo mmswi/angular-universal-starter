@@ -14,11 +14,19 @@ import {HTTPInterceptor} from './interceptors/http.interceptor';
 import {TransferStateService} from './services/transfer-state.service';
 import {metaReducers, reducers} from './store/reducers';
 import {svgLoaderFactory} from './factories/svg-loader.factory';
+import {ParentComponent} from './components/parent/parent.component';
+import {ChildComponent} from './components/child/child.component';
+import {GrandChildComponent} from './components/grand-child/grand-child.component';
+import {OtherChildComponent} from './components/other-child/other-child.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ParentComponent,
+    ChildComponent,
+    GrandChildComponent,
+    OtherChildComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,6 +1,4 @@
-import {HttpClient} from '@angular/common/http';
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
 
 @Component({
   selector   : 'app-root',
@@ -8,18 +6,5 @@ import {Observable} from 'rxjs';
   styleUrls  : ['./app.component.scss']
 })
 
-export class AppComponent implements OnInit {
-  title = 'angular-universal-starter';
-  users$: Observable<any> | undefined;
-  posts$: Observable<any> | undefined;
-
-  constructor(private http: HttpClient) { }
-
-  ngOnInit() {
-    this.users$ = this.http.get('api/users');
-  }
-
-  getPosts(): void {
-    this.posts$ = this.http.get<Observable<any>>('api/posts');
-  }
+export class AppComponent {
 }
